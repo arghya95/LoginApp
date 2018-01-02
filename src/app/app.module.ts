@@ -8,12 +8,28 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+// Initialize Firebase
+import * as firebase from 'firebase';
+import { FirebaseApp } from '@firebase/app-types';
+var config = {
+  apiKey: "AIzaSyA_vQzljIM1NebUlDa1TNu2_WJiZk54kAI",
+  authDomain: "loginapp-e210a.firebaseapp.com",
+  databaseURL: "https://loginapp-e210a.firebaseio.com",
+  projectId: "loginapp-e210a",
+  storageBucket: "loginapp-e210a.appspot.com",
+  messagingSenderId: "394798466089"
+};
+firebase.initializeApp(config);
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +39,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
