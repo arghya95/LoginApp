@@ -10,9 +10,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+
+import { GooglePlus } from '@ionic-native/google-plus';
+import { Facebook } from '@ionic-native/facebook';
 // Initialize Firebase
 import * as firebase from 'firebase';
-import { FirebaseApp } from '@firebase/app-types';
+// import { FirebaseApp } from '@firebase/app-types';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
 var config = {
   apiKey: "AIzaSyA_vQzljIM1NebUlDa1TNu2_WJiZk54kAI",
   authDomain: "loginapp-e210a.firebaseapp.com",
@@ -46,6 +50,8 @@ firebase.initializeApp(config);
   providers: [
     StatusBar,
     SplashScreen,
+    GooglePlus,
+    Facebook,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

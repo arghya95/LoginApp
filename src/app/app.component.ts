@@ -7,6 +7,9 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 
 import * as firebase from 'firebase';
+// import { FirebaseApp } from '@firebase/app-types';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
+import { MenuController } from 'ionic-angular/components/app/menu-controller';
 
 @Component({
   templateUrl: 'app.html'
@@ -15,10 +18,11 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
+  // sidemenuhide: boolean;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public menu:MenuController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -46,5 +50,7 @@ export class MyApp {
     console.log("logout clicked....")
     firebase.auth().signOut();
     this.nav.setRoot(LoginPage);
+    // this.sidemenuhide = true
+    this.menu.close();
   }
 }
